@@ -37,9 +37,9 @@ func main() {
 
 	// empty varibles can be defined also but type must be defined
 
-	var b int // defined first
-	b = 10    // initialized later
-	fmt.Println(b)
+	var num int // defined first
+	num = 10    // initialized later
+	fmt.Println(num)
 
 	var r = add(10, 20)
 	fmt.Println("Addint of two Number", r)
@@ -52,5 +52,28 @@ func main() {
 	// gender = "female" we will get compiler error `compilerUnassignableOperand`
 
 	fmt.Println("Constant Varibale", gender)
+
+	// multiple varibale in a sinlge line with out types
+
+	var a, b, c, d, e = 10, 20.5, "Asif", true, 60
+
+	fmt.Println("From multiple varibale a ", a)
+	fmt.Println("From multiple varibale b ", b)
+	fmt.Println("From multiple varibale c ", c)
+	fmt.Println("From multiple varibale d ", d)
+	fmt.Println("From multiple varibale e ", e)
+
+	// multiple varible with types and inside blokcs then initilize separately
+
+	var (
+		check bool
+		total int
+	)
+
+	check = false
+	total = 50
+
+	fmt.Println("Multiple Varibales From Blocks And Later Initlized", check)
+	fmt.Println("Multiple Varibales From Blocks And Later Initlized", total)
 
 }
