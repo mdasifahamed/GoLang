@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+/*
+	Important Note: If we denfine a inferred  size(with out specifying the of the array) of array it becaomes automatically a slice
+	even we can append it grow its capacity.
+*/
+
 func main() {
 
 	// Slices Are Similar To Array But It Has Dynamic Size in Length
