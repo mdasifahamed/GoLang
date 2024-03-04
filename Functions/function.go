@@ -42,6 +42,15 @@ func createArrayofevenNumbers(nums ...int) []int {
 	return storeEven
 }
 
+// recursive function
+
+func factorial(num int) int {
+	if num == 0 {
+		return 1
+	}
+	return num * factorial(num-1)
+}
+
 func main() {
 	displaygo()
 
@@ -65,5 +74,10 @@ func main() {
 	// using fucntion create a array of even number from differents numbers
 	evens := createArrayofevenNumbers(1, 5, 6, 79, 12, 64, 89, 74, 58, 69, 32, 14, 89, 78, 98, 65, 23, 14, 10, 200, 64, 78, 39, 96)
 	fmt.Println("Set Of Even Numbers", evens)
+
+	// factorial of 5 is
+
+	fact5 := factorial(5)
+	fmt.Println("factorial Of Ive Is ", fact5)
 
 }
