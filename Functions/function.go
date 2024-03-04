@@ -27,6 +27,21 @@ func actualInterestAfterTaxdDeduction(amount int, rate float32, tax float32) (mo
 	return
 }
 
+// Variadic functions takes dynamic number of parameter of a single data type
+
+// craete int Array
+
+func createArrayofevenNumbers(nums ...int) []int {
+	var storeEven []int
+	// using range to determine length
+	for _, el := range nums { // "_" this omits the index we don't nedd index here
+		if el%2 == 0 {
+			storeEven = append(storeEven, el)
+		}
+	}
+	return storeEven
+}
+
 func main() {
 	displaygo()
 
@@ -46,5 +61,9 @@ func main() {
 	fmt.Println("monthly interest after tax", monthly)
 	fmt.Println("yearly interest after tax", yearly)
 	fmt.Println("Principla and Profit Yearly  after tax", principleAndProfit)
+
+	// using fucntion create a array of even number from differents numbers
+	evens := createArrayofevenNumbers(1, 5, 6, 79, 12, 64, 89, 74, 58, 69, 32, 14, 89, 78, 98, 65, 23, 14, 10, 200, 64, 78, 39, 96)
+	fmt.Println("Set Of Even Numbers", evens)
 
 }
