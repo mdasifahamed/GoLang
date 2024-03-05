@@ -93,4 +93,34 @@ func main() {
 
 	manPoint.display()
 
+	// Chaining  Pointers
+
+	initialValue := 100
+
+	pointerToInintialValue := &initialValue // 'pointerToInintialValue' points `initialValue` means it hold address of the `initialValue`
+
+	pointerToPointer := &pointerToInintialValue //`pointerToPointer` `pointspointerToInintialValue`
+
+	// Now we can update and read the value of `initialValue` from the both  `pointerToInintialValue` `pointerToPointer`
+	// as pointerToInintialValue ->(points) to `initialValue` and `pointerToPointer`->(points) to `pointerToInintialValue`
+
+	fmt.Println("Reading Value Of The `initialValue` from `pointerToInintialValue`", *pointerToInintialValue)
+	fmt.Println("Reading Value Of The `initialValue` from `pointerToPointer`", **pointerToPointer)
+
+	//we can aslo update the `initialValue` from the both pinter as they both refer the same varialble
+
+	fmt.Println("Before Update The Value Of The `initialValue`", initialValue)
+
+	// first update from the `pointerToInintialValue`
+
+	*pointerToInintialValue = 200
+
+	fmt.Println("Update The Value Of The `initialValue` from `pointerToInintialValue`", initialValue)
+
+	// Second update from the `pointerToPointer`
+
+	**pointerToPointer = 300
+
+	fmt.Println("Update The Value Of The `initialValue` from `pointerToPointer`", initialValue)
+
 }
