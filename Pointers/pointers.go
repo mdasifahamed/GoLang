@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+func changeValueUsingPointer(a *int) {
+
+	*a = 100
+}
+
 func main() {
 	//A pointer is a special kind of variable that is not only used to store the memory addresses of other variables
 	//but also points where the memory is located and provides ways to find out the value stored at that memory location
@@ -36,5 +41,21 @@ func main() {
 
 	// value after update
 	fmt.Println("Value of num after update  ", num)
+
+	// using pointer in the function
+
+	/*
+		The `changeValueUsingPointer` takes a pointer varibal changes cgahe value of the given
+		variable to the function
+	*/
+
+	// defining a variable
+
+	y := 325
+
+	fmt.Println("Value of 'Y' before passing to the function", y)
+
+	changeValueUsingPointer(&y) // passing the address of y to the fucntion now it chnage its value to 100
+	fmt.Println("Value of 'Y' after passing to the function", y)
 
 }
