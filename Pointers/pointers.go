@@ -7,6 +7,20 @@ func changeValueUsingPointer(a *int) {
 	*a = 100
 }
 
+type man struct {
+	name  string
+	age   int
+	blind bool
+}
+
+func (m *man) display() {
+
+	fmt.Println("name:", m.name)
+	fmt.Println("age:", m.age)
+	fmt.Println("blind:", m.blind)
+
+}
+
 func main() {
 	//A pointer is a special kind of variable that is not only used to store the memory addresses of other variables
 	//but also points where the memory is located and provides ways to find out the value stored at that memory location
@@ -57,5 +71,26 @@ func main() {
 
 	changeValueUsingPointer(&y) // passing the address of y to the fucntion now it chnage its value to 100
 	fmt.Println("Value of 'Y' after passing to the function", y)
+
+	// we can use pointer inther struct also
+
+	// create a man struct
+
+	man1 := man{name: "joe", age: 25, blind: false}
+
+	// craete a poointer to man struct
+	manPoint := &man1
+
+	// now we can use `manPoint` to access and update man1
+	// this line shlud print all the info the man struct
+	manPoint.display()
+
+	// we can also update it
+	manPoint.name = "jordan"
+	manPoint.blind = true
+
+	// after updating
+
+	manPoint.display()
 
 }
